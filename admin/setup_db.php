@@ -1,5 +1,5 @@
 <?php
-include_once "config.inc.php";
+include_once "../config.inc.php";
 $sql = "CREATE TABLE event_main
 (
 id int,
@@ -7,7 +7,7 @@ title text,
 main_verb text,
 main_noun text,
 place text,
-with text,
+with_user text,
 note text,
 is_whole_day tinyint(1) DEFAULT 0,
 is_instantaneous tinyint(1) DEFAULT 0,
@@ -23,23 +23,29 @@ other_amount text,
 rate longtext,
 skill_node text,
 PRIMARY KEY (id)
-) ENGINE = MyISAM;
+)";
+$result = mysql_query($sql);
+echo $result;
 
-CREATE TABLE ach_main
+
+$sql = "CREATE TABLE ach_main
 (
 id int NOT NULL AUTO_INCREMENT,
 is_social tinyint(1) DEFAULT 0,
 title text,
 main_verb text,
-main_noun text
+main_noun text,
 PRIMARY KEY (id)
-) ENGINE = MyISAM;
+)";
+$result = mysql_query($sql);
+echo $result;
 
-CREATE TABLE user_main
+
+$sql = "CREATE TABLE user_main
 (
 id int NOT NULL AUTO_INCREMENT,
 email varchar(64),
-password char(64)
+password char(64),
 name varchar(15),
 gender tinyint(2) UNSIGNED DEFAULT 0,
 birthday datetime,
@@ -66,15 +72,21 @@ todo_list text,
 reg_time datetime,
 last_login_time datetime,
 PRIMARY KEY (id)
-) ENGINE = MyISAM;
+)";
+$result = mysql_query($sql);
+echo $result;
 
-CREATE TABLE access_log
+
+$sql = "CREATE TABLE access_log
 (
 id int NOT NULL AUTO_INCREMENT,
 user_id int,
 user_ip varchar(64),
-) ENGINE = MyISAM";
-mysql_query($sql,$con);
+PRIMARY KEY (id)
+)";
+$result = mysql_query($sql);
+echo $result;
+
 
 
 ?>
