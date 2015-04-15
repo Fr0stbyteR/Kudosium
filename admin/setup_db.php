@@ -54,12 +54,13 @@ echo $result;
 $sql = "CREATE TABLE user_main
 (
 id int NOT NULL AUTO_INCREMENT,
+//必要信息
 email varchar(64),
-password char(64),
-name varchar(15),
+password char(32),
+username varchar(15),
 //个人信息
 gender tinyint(2) UNSIGNED DEFAULT 0,
-birthday datetime,
+birthday datetime DEFAULT '1994-01-01 00:00',
 lastname varchar(32),
 firstname varchar(32),
 mobile varchar(20),
@@ -76,12 +77,12 @@ other text,
 sns_notification longtext,
 following longtext,
 follower longtext,
-private_ach_points int UNSIGNED,
-social_ach_points int UNSIGNED,
-skill_points int UNSIGNED,
+private_ach_points int UNSIGNED DEFAULT 0,
+social_ach_points int UNSIGNED DEFAULT 0,
+skill_points int UNSIGNED DEFAULT 0,
 todo_list text,
 //内部
-permission int UNSIGNED, //用户组
+permission int UNSIGNED DEFAULT 0, //用户组
 login_count int UNSIGNED,
 reg_time datetime,
 last_login_time datetime,
@@ -96,6 +97,7 @@ $sql = "CREATE TABLE access_log
 id int NOT NULL AUTO_INCREMENT,
 user_id int,
 user_ip varchar(64),
+time datetime,
 PRIMARY KEY (id)
 )";
 $result = mysql_query($sql);
@@ -108,6 +110,17 @@ id int NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (id)
 )";
 
+//邀请码表
+$sql = "CREATE TABLE invitation_code
+(
+id int NOT NULL AUTO_INCREMENT,
+code char(32),
+user_id int,
+to_user_id int,
+generated_time datetime,
+used_time datetime,
+PRIMARY KEY (id)
+)";
 $result = mysql_query($sql);
 echo $result;
 

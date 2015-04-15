@@ -1,9 +1,9 @@
 <?php
 
 // 严格开发模式
-ini_set('display_errors', 'On');
-ini_set('memory_limit', '64M');
-error_reporting(E_ALL);
+//ini_set('display_errors', 'On');
+//ini_set('memory_limit', '64M');
+//error_reporting(E_ALL);
 
 $t1 = $ntime = microtime(true);
 $endtime = '未执行任何操作，不统计！';
@@ -82,4 +82,5 @@ if($str != '')
 $return['result'] = isset($okresult) ? $okresult : '';
 $return['endtime'] = $endtime;
 echo json_encode($return); 
+
 ?>
