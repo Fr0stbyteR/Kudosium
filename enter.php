@@ -24,15 +24,20 @@ $pageTitle = "入口";
 		<form action="javascript:;">
 			<div class="form-group">
 				<label for="inputEmail">Email</label>
-				<input name="email" class="form-control input-medium" type="email" id="inputRegisterEmail" placeholder="输入Email">
+				<input name="email" class="form-control input-medium" type="email" id="inputRegisterEmail" placeholder="输入Email" />
 			</div>
-				<div class="form-group">
+			<div class="form-group">
 				<label for="inputUsername">用户名</label>
-				<input name="username" class="form-control input-medium" type="text" id="inputRegisterUsername" placeholder="输入用户名">
+				<input name="username" class="form-control input-medium" type="text" id="inputRegisterUsername" placeholder="输入用户名" />
 			</div>
-				<div class="form-group">
+			<div class="form-group">
 				<label for="inputPassword">密码</label>
-				<input name="password" class="form-control input-medium" type="password" id="inputRegisterPassword" placeholder="输入密码">
+				<input name="password" class="form-control input-medium" type="password" id="inputRegisterPassword" placeholder="输入密码" />
+			</div>
+			<div class="checkbox">
+				<label>
+					<input name="remember" type="checkbox" id="inputRegisterRemember"/>记住我
+				</label>
 			</div>
 			<button type="submit" class="btn btn-default" id="postRegisterForm">注册</button>
 		</form>
