@@ -6,9 +6,8 @@ var wsSourceText = $(this).val();
 	type: "POST", 
 		url: "getws.php", 
 		dataType: "json", 
-		data: {"source":wsSourceText}, 
+		data: {"text":wsSourceText}, 
 		success: function(json){
-			$("#test").val(json.result);
 		} 
 	})
 })

@@ -1,4 +1,5 @@
 <?php
+	set_time_limit(0);
 	$config_host = "localhost";
 	$config_username = "admin";
 	$config_password = "admin";

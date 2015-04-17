@@ -13,8 +13,8 @@ $sql = "CREATE TABLE event_main
 #ID和主体
 id bigint,
 title text,
-main_verb text,
-main_noun text, #json
+main_predicate text, #谓语
+main_object text, #json宾语
 is_passive tinyint(1) DEFAULT 0,
 result tinyint(1),
 place text,
@@ -53,8 +53,8 @@ $sql = "CREATE TABLE ach_main
 id bigint NOT NULL AUTO_INCREMENT,
 is_social tinyint(1) DEFAULT 0,
 title text,
-main_verb text,
-main_noun text,
+main_predicate text, #谓语
+main_object text, #宾语
 result tinyint(1),
 is_passive tinyint(1) DEFAULT 0,
 place text,
@@ -147,6 +147,17 @@ user_id int,
 to_user_id int,
 generated_time datetime,
 used_time datetime,
+PRIMARY KEY (id)
+)";
+$result = mysql_query($sql);
+echo $result;
+
+
+//动词表
+$sql = "CREATE TABLE dict_verb
+(
+id int NOT NULL AUTO_INCREMENT,
+word text,
 PRIMARY KEY (id)
 )";
 $result = mysql_query($sql);
