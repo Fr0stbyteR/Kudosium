@@ -21,36 +21,38 @@ $pageTitle = "test";
 	<script type="text/javascript" src="./js/_demo_nlp.js?v=0.4"></script>
 </head>
 <body>
-	<form class="form-inline">
-		<div class="form-group">
-			<div class="input-group">
-				<span class="input-group-addon inputElementSpan inputSubjectSpan" id="inputSubject">
+	<div class="well well-sm inputAch">
+		<form class="form-inline form-group">
+			<div class="input-group inputAchMain">
+				<span class="input-group-addon inputElementSpan inputSubjectSpan inputSubject">
 					<span class="glyphicon glyphicon-user inputWordTypeIcon" aria-hidden="true"></span>
-					<span>我</span>
+					<span class="inputSubjectText">我</span>
 					<input class="inputHidden" />
 					<button class="btn btn-primary btn-xs btnPlusAt">@</button>
 				</span>
-				<span class="input-group-addon inputElementSpan inputPredicateSpan" id="inputPredicate">
-					<span class="glyphicon glyphicon-console inputWordTypeIcon" aria-hidden="true"></span>
-					<span class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" ><span id="textPredicate">something</span><span class="caret"></span></span>
+				<span class="input-group-addon inputElementSpan inputPredicateSpan hasDurableDropdown inputPredicate hidden">
+					<span class="glyphicon glyphicon-triangle-right inputWordTypeIcon" aria-hidden="true"></span>
+					<span class="dropdown-toggle inputDropdownToggle inputPredicateDropdownToggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="inputPredicateText">干</span><span class="caret"></span></span>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Other</a></li>
+						<li class="dropdownInput"><input /><button class="btn btn-primary btn-xs dropdownInputButton"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></li>
 					</ul>
 				</span>
-				<span class="input-group-addon inputElementSpan inputObjectSpan" id="inputObject">
-					<span class="glyphicon glyphicon-triangle-right inputWordTypeIcon" aria-hidden="true"></span>
-					<span id="textObject"></span>
+				<span class="input-group-addon inputElementSpan inputObjectSpan inputObject hidden">
+					<span class="glyphicon glyphicon-option-horizontal inputWordTypeIcon" aria-hidden="true"></span>
+					<span class="inputObjectText">什么</span>
 					<input class="inputHidden" />
 					<button class="btn btn-primary btn-xs btnPlusAt">@</button>
 				</span>
 				<span class="glyphicon glyphicon-pencil inputWordTypeIcon" aria-hidden="true"></span>
-				<input name="source" class="form-control inputNoteInput" type="text" id="test" />
-				<span class="input-group-btn">
-					<button class="btn btn-primary" type="button">发布</button>
+				<input name="source" class="form-control inputSourceInput" type="text" />
+				<span class="input-group-btn inputReadySpan">
+					<button class="btn btn-info inputReadyButton" type="button">准备</button>
+				</span>
+				<span class="input-group-btn inputSubmitSpan hidden">
+					<button class="btn btn-primary inputSubmitButton" type="button">发布</button>
 				</span>
 			</div>
-		</div>
-	</form>
+		</form>
+	</div>
 </body>
 </html>

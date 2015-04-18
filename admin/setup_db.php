@@ -60,6 +60,7 @@ is_passive tinyint(1) DEFAULT 0,
 place text,
 with_user text,
 amount text,
+referer text, #转发链
 is_instantaneous tinyint(1) DEFAULT 0,
 estimated_duration bigint, #平均持续时间
 estimated_repetition bigint, #平均重复时间
