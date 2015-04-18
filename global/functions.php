@@ -38,7 +38,7 @@ function msubstr($sourcestr, $cutstart, $cutlength) {
 	$i = 0; 
 	$n = 0; 
 	$str_length = strlen($sourcestr); //字符串的字节数 
-	while (($n < $cutlength + $n) && ($i <= $str_length))  //n=实际字符串指针 i=byte指针
+	while (($n < $cutlength + $cutstart) && ($i <= $str_length))  //n=实际字符串指针 i=byte指针
 	{ 
 		$temp_str = substr($sourcestr, $i, 1); 
 		$ascnum = ord($temp_str); //得到字符串中第$i位字符的ascii码 

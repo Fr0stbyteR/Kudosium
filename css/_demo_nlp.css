@@ -1,0 +1,63 @@
+/*bootstrap patch*/
+.input-group .form-control:not(:first-child):not(:last-child), .input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child) {
+	border-right: 1px;
+}
+.input-group .form-control {
+	z-index: 0;
+}
+.inputHidden {
+	width: 0px; 
+	padding: 0px; 
+	border: 0px; 
+	display: none;
+}
+.inputElementSpan {
+	padding: 0px 10px 0px 25px;
+	font-size: 12px;
+}
+.inputSubjectSpan {
+	padding-right: 25px;
+	font-weight: bold;
+}
+.inputSubjectInput {
+	padding: 2px;
+	margin-left: 2px;
+	font-size: 12px;
+	font-weight: normal;
+}
+.inputPredicateSpan {
+}
+.inputObjectSpan {
+	padding-right: 25px;
+}
+.inputWordTypeIcon {
+	position: absolute;
+	top: 0px;
+	line-height: 1.5;
+	margin-left: 0px;
+	padding: 0px 3px;
+	border-radius: 0px 0px 4px 0px;
+	border-top-left-radius: inherit;
+	border: 1px solid #ccc;
+	font-size: 12px;
+	z-index: 1;
+}
+.inputElementSpan > .inputWordTypeIcon {
+	margin-left: -26px;
+}
+.inputNoteInput {
+	padding-left: 25px;
+}
+.btnPlusAt {
+	position: absolute;
+	top: 0px;
+	padding: 0px 2px;
+	margin-left: 8px;
+	border-radius: 0px 0px 0px 4px;
+	border-top-right-radius: inherit;
+	font-size: 12px
+}
+
+.modifiable:hover {
+
+}

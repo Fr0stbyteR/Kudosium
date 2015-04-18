@@ -15,19 +15,23 @@ $time1 = microtime();
 $str = (isset($_POST['text']) ? filter_var(trim($_POST['text']),FILTER_SANITIZE_SPECIAL_CHARS) : ''); 
 if ($str == "") exit;
 $str_match = [];
-preg_match('/(.+?)[\p{P}]/u', $str, $str_match); //匹配到第一个标点符号
+preg_match('/(.+?)[\p{P}](.*)/u', $str, $str_match); //匹配到第一个标点符号
 $str = isset($str_match[1]) ? $str_match[1] : $str;
+$return['note'] = isset($str_match[2]) ? $str_match[2] : '';
 
 //被字句flag
-if (msubstr($str, 0, 1) == "被") {
+if (substr($str, 0, 3) == "被") {
     $return['isPassive'] = 1;
     $is_passive = 1;
-    $str = msubstr($str, 0, 1); //本地only 以防误判断
+    $str = substr($str, 3); //本地only 以防误判断
 } else {
     $return['isPassive'] = 0;
     $is_passive = 0;
 }
 $str = str_replace("了","",$str); //本地only 以防误判断
+
+//匹配中文数词
+//匹配量词
 
 //匹配动词
 $possible_verb = mstrextract($str);
@@ -60,7 +64,9 @@ foreach ($return['predicate'] as $key => $word) {
 $time2 = microtime();
 if (isset($return['predicate'])) {
     $return['timeElapsed'] = $time2 - $time1;
+    $return['success'] = 1;
 } else {
+    $return['success'] = 0;
     $return['error'] = "无结果";
 }
 
