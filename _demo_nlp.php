@@ -32,15 +32,31 @@ $pageTitle = "test";
 				</span>
 				<span class="input-group-addon inputElementSpan inputPredicateSpan hasDurableDropdown inputPredicate hidden">
 					<span class="glyphicon glyphicon-triangle-right inputWordTypeIcon" aria-hidden="true"></span>
-					<span class="dropdown-toggle inputDropdownToggle inputPredicateDropdownToggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="inputPredicateText">干</span><span class="caret"></span></span>
-					<ul class="dropdown-menu" role="menu">
-						<li class="dropdownInput"><input /><button class="btn btn-primary btn-xs dropdownInputButton"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button></li>
+					<span class="dropdown-toggle durableDropdownToggle inputPredicateDropdownToggle" data-toggle="dropdown" role="button" aria-expanded="false">
+						<span class="inputPredicateText">干</span><span class="caret"></span>
+					</span>
+					<ul class="dropdown-menu inputPredicateDropdown" role="menu">
+						<li role="presentation" class="dropdownInputLi">
+							<input class="dropdownInput" placeholder="自定义" />
+							<button class="btn btn-primary btn-xs dropdownCloseButton afterInputButton inputPredicateDropdownSubmitButton"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+						</li>
 					</ul>
 				</span>
 				<span class="input-group-addon inputElementSpan inputObjectSpan inputObject hidden">
 					<span class="glyphicon glyphicon-option-horizontal inputWordTypeIcon" aria-hidden="true"></span>
-					<span class="inputObjectText">什么</span>
-					<input class="inputHidden" />
+					<input class="inputObjectInput inputHidden" placeholder="自定义" />
+					<span class="hasDurableDropdown inputObjectDetail">
+						<button class="btn btn-info btn-xs dropdown-toggle durableDropdownToggle afterInputButton inputObjectDetailDropdownToggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></button>
+						<ul class="dropdown-menu inputObjectDetailDropdown" role="menu">
+							<li role="presentation" class="dropdownInputLi">
+								<input class="dropdownInput" placeholder="自定义" />
+								<!--<span class="hasDurableDropdown inputObjectDetail">
+									<button class="btn btn-info btn-xs durableDropdownToggle afterInputButton inputObjectDetailDropdownToggle"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span></button>
+								</span>-->
+								<button class="btn btn-primary btn-xs afterInputButton inputObjectDetailPlusButton"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+							</li>
+						</ul>
+					</span>
 					<button class="btn btn-primary btn-xs btnPlusAt">@</button>
 				</span>
 				<span class="glyphicon glyphicon-pencil inputWordTypeIcon" aria-hidden="true"></span>

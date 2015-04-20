@@ -1,10 +1,14 @@
-/*bootstrap patch*/
-.input-group .form-control:not(:first-child):not(:last-child), .input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child) {
-	border-right: 1px;
-}
-.input-group .form-control {
-	z-index: 0;
-}
+/*bootstrap_patch*/
+.input-group .form-control:not(:first-child):not(:last-child),.input-group-addon:not(:first-child):not(:last-child),.input-group-btn:not(:first-child):not(:last-child){border-right:1px;}
+.input-group .form-control{z-index:0;}
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus{color:#fff;text-decoration:none;background-color:#357ebd;}
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:06px6px6px;-moz-border-radius:06px6px6px;border-radius:06px6px6px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:"";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px05px5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px06px6px;-moz-border-radius:6px06px6px;border-radius:6px06px6px;}
+/****************/
 .inputHidden {
 	width: 0px; 
 	padding: 0px; 
@@ -54,22 +58,30 @@
 .btnPlusAt {
 	position: absolute;
 	top: 0px;
-	padding: 0px 2px;
-	margin-left: 8px;
+	padding: 0px 3px;
+	margin-left: 6px;
 	border-radius: 0px 0px 0px 4px;
 	border-color: #ccc;
 	border-top-right-radius: inherit;
 	font-size: 12px
 }
-.dropdownInput {
+.dropdownInputLi {
 	margin: 0px 5px;
 }
-.dropdownInputButton {
+.dropdownInput {
+	font-size: 12px;
+	height: 20px;
+}
+.afterInputButton {
 	border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;
-	height: 22px;
+	height: 20px;
 	vertical-align: top;
 	border-left-width: 0px;
+	margin-left: -5px;
+}
+.afterInputButton:not(:last-child) {
+	border-radius: 0;
 }
 .inputReadyButton {
 	border-top-left-radius: 0;
